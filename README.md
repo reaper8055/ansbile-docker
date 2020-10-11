@@ -1,38 +1,33 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+Ansible playbook to install docker-ce and docker compose in Debian
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+Any system running this playbook should have ansible installed. Check [ansible installation docs](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) for platform specific instructions.
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+All role specific variables that can be changed are in defaults/main.yml
 
-Dependencies
-------------
+|                            |                                              |
+|----------------------------|----------------------------------------------|
+| docker_compose_version     | install a sepcific version of docker compose |
+| docker_compose_install_dir | location for docker_compose binary to live   |
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
 
-Example Playbook
+
+Run the Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+Have all your hosts in a [host-file](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html).
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+ansible-playbook -h hosts ansible-docker.yml -kK
 
 License
 -------
 
 BSD
-
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).

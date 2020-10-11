@@ -1,0 +1,5 @@
+---
+- name: install docker and docker_compose
+  hosts: docker-hosts
+  roles:
+    - docker-compose
