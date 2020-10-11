@@ -23,7 +23,7 @@ Run the Playbook
 
 Have all your hosts in a [host-file](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html).
 
-ansible-playbook -h hosts ansible-docker.yml -kK
+ansible-playbook -i hosts ansible-docker.yml -kK
 
 License
 -------
