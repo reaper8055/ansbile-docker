@@ -13,7 +13,7 @@ Role Variables
 
 All role specific variables that can be changed are in defaults/main.yml
 
-| Key                        | Values                                       | Description                                  |
+| Key                        | Value                                        | Description                                  |
 |----------------------------|----------------------------------------------|----------------------------------------------|
 | docker_compose_version     | 1.24.4                                       | install a sepcific version of docker compose |
 | docker_compose_install_dir | /usr/local/bin                               | location for docker_compose binary to live   |
