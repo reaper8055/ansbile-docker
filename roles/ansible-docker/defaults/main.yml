@@ -2,3 +2,5 @@
 # defaults file for ansible-docker
 docker_compose_version: 1.27.4
 docker_compose_install_dir: /usr/local/bin
+debian_distribution: debian
+ubuntu_distribution: ubuntu

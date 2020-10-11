@@ -4,11 +4,14 @@
     url: https://download.docker.com/linux/debian/gpg
     state: present
 
-- name: add-apt-repository
+- name: add apt repository
   apt_repository:
-    repo: deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable
+    repo: "deb [arch=amd64] https://download.docker.com/linux/{{ ubuntu_distribution }} {{ ansible_distribution_release }} stable"
     state: present
-  include: update-cache.yml
+
+- name: update cache
+  apt:
+    update_cache: yes
 
 - name: install docker
   apt:
@@ -16,7 +19,5 @@
       - docker-ce
       - docker-ce-cli
       - containerd.io
-  state: present
   notify:
-    - "enable docker service"
-    - "start docker service"
+    - "docker service"

@@ -1,13 +1,13 @@
 ---
 # handlers file for ansible-docker
 - name: enable docker service
-  listen: "enable docker service"
+  listen: "docker service"
   systemd:
     name: docker
     enabled: yes
 
 - name: start docker service
-  listen: "start docker service"
+  listen: "docker service"
   systemd:
     name: docker
     state: started
