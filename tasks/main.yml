@@ -1,0 +1,13 @@
+---
+# tasks file for ansible-docker
+- include: update-cache.yml
+  become: yes
+
+- include: install-dependencies.yml
+  become: yes
+
+- include: install-docker.yml
+  become: yes
+
+- include: install-docker-compose.yml
+  become: yes

@@ -1,0 +1,22 @@
+---
+- name: apt-key add
+  apt_key:
+    url: https://download.docker.com/linux/debian/gpg
+    state: present
+
+- name: add-apt-repository
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable
+    state: present
+  include: update-cache.yml
+
+- name: install docker
+  apt:
+    pkg:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+  state: present
+  notify:
+    - "enable docker service"
+    - "start docker service"
